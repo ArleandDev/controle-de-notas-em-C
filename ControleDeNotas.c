@@ -1,3 +1,4 @@
+//ArleandDev
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -51,8 +52,8 @@ int main(){
 do{
 	cabecalho();
 	printf("\n1 - Cadastrar Aluno\n2 - Excluir Aluno\n3 - Pesquisar Aluno\n4 - Listar Alunos Cadastrados\n");
-	printf("5 - LanÁar Notas de um Aluno\n6 - Sair\n\n");
-	printf("Escolha uma opÁ„o: ");
+	printf("5 - Lan√ßar Notas de um Aluno\n6 - Sair\n\n");
+	printf("Escolha uma op√ß√£o: ");
 	scanf("%d", &opcao);
 
 	switch(opcao){
@@ -61,8 +62,8 @@ do{
 		case 3: pesquisar(); break;
 		case 4: listar(); break;
 		case 5: adicionarNotas();break;	
-		case 6: printf("Obrigado por utilizar nossos serviÁos.\n"); break;
-		default: printf("OpÁ„o Inv·lida.\n"); break;  	
+		case 6: printf("Obrigado por utilizar nossos servi√ßos.\n"); break;
+		default: printf("Op√ß√£o Inv√°lida.\n"); break;  	
   	}
 }while(opcao!=6);
 
@@ -104,7 +105,7 @@ void cadastrar(){
             fflush(stdin);
 			scanf("%s", &aln.email);
 			
-			printf("Informe a turma do aluno (manh„/tarde):");
+			printf("Informe a turma do aluno (manh√£/tarde):");
             fflush(stdin); 
 			scanf("%s", &aln.turma);
 
@@ -185,7 +186,7 @@ ALUNO pesquisar(){
 	ALUNO aln;
 	cabecalho();
     fflush(stdin);
-    printf("Digite a matrÌcula do aluno:");
+    printf("Digite a matr√≠cula do aluno:");
     scanf("%d", &matricula);
     aln = retornaAluno(matricula);
     getch();
@@ -255,7 +256,7 @@ void adicionarNotas(){
 
         while(fread(&aln, sizeof(ALUNO), 1, arquivo)){
                 if (aln.matricula == matricula){
-                    printf("Digite o n˙mero da nota que deseja alterar\n1 - Primeira Nota\n2 - Segunda Nota\n");
+                    printf("Digite o n√∫mero da nota que deseja alterar\n1 - Primeira Nota\n2 - Segunda Nota\n");
 				    scanf("%d", &num);
 						switch(num){
 							case 1:
