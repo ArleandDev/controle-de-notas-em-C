@@ -82,7 +82,6 @@ void cadastrar(){
 	FILE* arquivo;
 	struct aluno aln;
     char continuar = 'n';
-    //int i;
     
     aln.nota1 = -1;
     aln.nota2 = -1;
