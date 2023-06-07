@@ -7,13 +7,8 @@
 
 struct aluno{ 
 	int matricula;
-	char nome[50];
-	char email[50];
-	char turma[5];
-	float nota1;
-	float nota2;
-	float media;
-	char estado[20];
+	char nome[50], email[50], turma[5], estado[20];
+	float nota1, nota2, media;
 };
 typedef struct aluno ALUNO;
 
