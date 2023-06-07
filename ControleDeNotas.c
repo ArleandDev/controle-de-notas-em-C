@@ -121,7 +121,7 @@ void remover(){
     char continuar = 'n';
  
  	arquivo = fopen("controle.dat","r");
-    remove("tmp.dat");
+    	remove("tmp.dat");
  	temp = fopen("tmp.dat","ab");
  
  	if(arquivo==NULL||temp==NULL){
@@ -144,9 +144,9 @@ void remover(){
 		if(continuar == 's'){
  		
    			if(remove("controle.dat")==0&&rename("tmp.dat","controle.dat")==0){
-    			printf("\nAluno removido com sucesso.");
+    				printf("\nAluno removido com sucesso.");
    			}else{
-    			printf("\nErro.");
+    				printf("\nErro.");
 
     			remove("tmp.dat");
    			}
@@ -166,19 +166,19 @@ void listar(){
 	if(arquivo == NULL){
 		printf("Erro na abertura do arquivo.\n");
 	}else{
-        dadosCabecalho();
-        while(fread(&aln, sizeof(ALUNO), 1, arquivo)){
-            dadosAluno(aln);
-        }
+		dadosCabecalho();
+		while(fread(&aln, sizeof(ALUNO), 1, arquivo)){
+		    dadosAluno(aln);
+		}
 	}
 	fclose(arquivo);
     getch();
 }
 
 ALUNO pesquisar(){
-	int matricula;
-	ALUNO aln;
-	cabecalho();
+    int matricula;
+    ALUNO aln;
+    cabecalho();
     fflush(stdin);
     printf("Digite a matrícula do aluno:");
     scanf("%d", &matricula);
@@ -231,15 +231,15 @@ void dadosAluno(ALUNO aln){
 }
 
 void adicionarNotas(){
- 	FILE* arquivo;
- 	FILE* temp;
- 	ALUNO aln;
+    FILE* arquivo;
+    FILE* temp;
+    ALUNO aln;
     int matricula;
     int num;
     
  
  	arquivo = fopen("controle.dat","r");
-    remove("tmp.dat");
+    	remove("tmp.dat");
  	temp = fopen("tmp.dat","ab");
  
  	if(arquivo==NULL||temp==NULL){
@@ -266,7 +266,7 @@ void adicionarNotas(){
 							break;
 						}
 						if (aln.nota1>0 && aln.nota2>0){
-	    				aln.media = (aln.nota1+aln.nota2)/2;
+	    						aln.media = (aln.nota1+aln.nota2)/2;
 						}
 						if ((aln.nota1+aln.nota2)/2 >= 7.0){
 							sprintf(aln.estado, "Aprovado");
@@ -284,12 +284,11 @@ void adicionarNotas(){
   		fflush(stdin);
  
    		if(remove("controle.dat")==0&&rename("tmp.dat","controle.dat")==0){
-    		printf("\nNotas adicionadas com sucesso.");
+    			printf("\nNotas adicionadas com sucesso.");
    		}else{
-    		printf("\nErro.");
-
-    		remove("tmp.dat");
-   		}
+			printf("\nErro.");
+			remove("tmp.dat");
+			}
   		}
         getch();
  	}
